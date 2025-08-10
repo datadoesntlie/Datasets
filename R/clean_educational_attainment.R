@@ -52,20 +52,20 @@ print("Countries from our analysis found in dataset:")
 found_countries <- edu_raw$`Country Name`[edu_raw$`Country Name` %in% c(selected_countries, "Korea, Rep.")]
 print(unique(found_countries))
 
-# Focus on tertiary education indicators that are most relevant
-# We'll prioritize "at least Bachelor's or equivalent" as it's most comparable to our other tertiary education data
-tertiary_indicators <- c(
-  "at least Bachelor's or equivalent",
-  "at least completed short-cycle tertiary", 
-  "at least completed post-secondary"
+# Focus on tertiary education disaggregations that are available
+# Based on the available disaggregations, we need to match exactly
+tertiary_disaggregations <- c(
+  "At least Bachelor's or equivalent, female",
+  "At least completed short-cycle tertiary, female", 
+  "At least completed post-secondary, female"
 )
 
 print("Filtering for tertiary education levels...")
-print("Using indicators:", tertiary_indicators)
+print(paste("Using disaggregations:", paste(tertiary_disaggregations, collapse = ", ")))
 
 # Clean the data - focus on female tertiary education
 edu_clean <- edu_raw %>%
-  filter(Disaggregation %in% paste0(tertiary_indicators, ", female")) %>%
+  filter(Disaggregation %in% tertiary_disaggregations) %>%
   select(`Country Name`, Year, Value, Disaggregation) %>%
   rename(Country = `Country Name`, Educational_attainment = Value) %>%
   mutate(Country = standardize_country_names(Country)) %>%
@@ -76,7 +76,7 @@ edu_clean <- edu_raw %>%
   # Prioritize Bachelor's level, then short-cycle tertiary, then post-secondary
   mutate(
     Priority = case_when(
-      grepl("Bachelor", Disaggregation) ~ 1,
+      grepl("Bachelor's", Disaggregation) ~ 1,
       grepl("short-cycle tertiary", Disaggregation) ~ 2,
       grepl("post-secondary", Disaggregation) ~ 3,
       TRUE ~ 4
