@@ -1,0 +1,12 @@
+Variable,Observations,Mean,Std. Dev.,Min,Max
+Contraceptive Prevalence Rate (%),257,57.34,8.284,44.3,84.5
+Female Labor Force Participation (%),280,48.244,7.319,33.099,62.818
+Female Tertiary Education Rate (%),243,28.337,12.159,5.184,57.327
+Total Fertility Rate,256,1.46,0.252,0.81,2.14
+GDP per Capita (2017 PPP $),272,30798.993,9255.774,9367.093,54878.292
+Life Expectancy at 65 (years),269,19.282,1.64,14.65,22.45
+Old Age Dependency Ratio (%),264,29.378,8.194,8.6,55.4
+Pension Expenditure (% GDP),259,10.105,3.968,0.74,17.942
+Social Security Contributions (% GDP),263,11.421,3.458,1.875,19.456
+Urban Population Rate (%),272,78.267,5.954,66.706,92.043
+Pension Financing Gap (% GDP),258,-1.297,2.625,-7.686,6.942

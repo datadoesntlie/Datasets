@@ -49,15 +49,29 @@ print(unique(found_countries))
 print("Sample of data structure:")
 print(head(life_exp_raw %>% select(`Reference area`, TIME_PERIOD, OBS_VALUE), 5))
 
-# Clean the data
+# Check gender information in the data
+print("Gender information in dataset:")
+print(unique(life_exp_raw$Sex))
+
+# Clean the data - average male and female life expectancy
 life_exp_clean <- life_exp_raw %>%
-  select(`Reference area`, TIME_PERIOD, OBS_VALUE) %>%
+  select(`Reference area`, TIME_PERIOD, OBS_VALUE, Sex) %>%
   rename(Country = `Reference area`, Year = TIME_PERIOD, Life_expectancy_65 = OBS_VALUE) %>%
   mutate(Country = standardize_country_names(Country)) %>%
   filter(Country %in% selected_countries) %>%
   mutate(Year = as.numeric(Year)) %>%
   filter(!is.na(Life_expectancy_65), !is.na(Year)) %>%
   filter(Year >= 1990 & Year <= 2024) %>%  # Restrict to analysis period
+  # Average male and female life expectancy by country-year
+  group_by(Country, Year) %>%
+  summarise(
+    Life_expectancy_65 = mean(Life_expectancy_65, na.rm = TRUE),
+    gender_count = n(),
+    .groups = 'drop'
+  ) %>%
+  # Only keep observations where we have data (should be 1 or 2 genders per country-year)
+  filter(gender_count > 0) %>%
+  select(-gender_count) %>%
   arrange(Country, Year)
 
 print("Cleaned data summary:")
