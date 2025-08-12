@@ -49,8 +49,8 @@ master_data <- datasets$contraceptive %>%
       TRUE ~ "Other"
     )
   ) %>%
-  # Filter to analysis period
-  filter(Year >= 1990 & Year <= 2024) %>%
+  # Filter to analysis period (excluding incomplete 2022-2024 data)
+  filter(Year >= 1990 & Year <= 2021) %>%
   arrange(Country, Year)
 
 print(paste("Master dataset created with", nrow(master_data), "observations"))

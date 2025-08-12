@@ -1,0 +1,102 @@
+================================================================================ 
+CHAPTER 3.4 DATA VISUALIZATION AND TRENDS - ANALYTICAL INSIGHTS 
+Generated on:  
+1754965004 
+Time Period: 1990-2021 (excluding incomplete 2022-2024 data) 
+================================================================================ 
+
+1. TIME SERIES TRENDS ANALYSIS: 
+-------------------------------- 
+
+A. Female Labor Force Participation Trends (1990s vs 2015+): 
+# A tibble: 2 × 4
+  Country_Group Start_Mean End_Mean Change
+  <chr>              <dbl>    <dbl>  <dbl>
+1 Developed           44.6     50.9   6.35
+2 Developing          38.4     49.1  10.7 
+Key Finding: Developed countries increased FLFP by 6.35 percentage points 
+
+B. Total Fertility Rate Trends (1990s vs 2015+): 
+# A tibble: 2 × 5
+  Country_Group Start_Mean End_Mean Change Below_Replacement
+  <chr>              <dbl>    <dbl>  <dbl>             <dbl>
+1 Developed           1.51     1.44 -0.074              99.2
+2 Developing          2.82     1.77 -1.05               49  
+Key Finding: 99.2 % of developed country observations below replacement rate (2.1) 
+
+C. Old Age Dependency Ratio Trends (1990s vs 2015+): 
+# A tibble: 2 × 4
+  Country_Group Start_Mean End_Mean Change
+  <chr>              <dbl>    <dbl>  <dbl>
+1 Developed           23.0     35.9   13.0
+2 Developing          10.0     15.6    5.6
+Key Finding: Developed countries aging accelerated by 12.95 percentage points 
+
+
+2. CROSS-COUNTRY COMPARISON ANALYSIS: 
+------------------------------------ 
+
+Group Averages Comparison: 
+# A tibble: 2 × 6
+  Country_Group FLFP_Mean TFR_Mean GDP_Mean Pension_Mean Education_Mean
+  <chr>             <dbl>    <dbl>    <dbl>        <dbl>          <dbl>
+1 Developed          47.9     1.46     30.4         10.1           27.8
+2 Developing         44.9     2.21      9.1          4             13.6
+
+Development Gaps (Developed vs Developing): 
+GDP per capita gap: 3.3 times higher 
+Female education gap: 2 times higher 
+Pension expenditure gap: 2.5 times higher 
+
+
+3. KEY CORRELATIONS: 
+------------------- 
+Female Labor vs Fertility: -0.095 
+GDP vs Fertility: -0.445 
+Education vs Fertility: -0.252 
+Aging vs Pension Expenditure: 0.795 
+Female Labor vs Education: 0.583 
+
+
+4. KEY STYLIZED FACTS: 
+--------------------- 
+Stylized Fact 1: Labor-Fertility Trade-off 
+  Correlation coefficient: -0.095 
+  Interpretation: Negative correlation supports the trade-off hypothesis 
+
+Stylized Fact 2: Development-Fertility Relationship 
+  Correlation coefficient: -0.445 
+  Interpretation: Strong negative correlation confirms demographic transition theory 
+
+Stylized Fact 3: Education-Fertility Relationship 
+  Correlation coefficient: -0.252 
+  Interpretation: Education empowerment leads to fertility decline 
+
+Stylized Fact 4: Aging-Pension Sustainability Challenge 
+  Correlation coefficient: 0.795 
+  Interpretation: Strong positive correlation shows pension system pressure 
+
+
+5. DATA COVERAGE SUMMARY: 
+------------------------ 
+Data Coverage (% of total observations): 
+  Total_Observations FLFP_Coverage TFR_Coverage Education_Coverage
+1                352           100          100               82.7
+  Pension_Coverage GDP_Coverage
+1               96          100
+
+Country Data Coverage Ranking (lowest to highest): 
+# A tibble: 11 × 4
+   Country     Observations Missing_Count Coverage_Rate
+   <chr>              <int>         <int>         <dbl>
+ 1 Brazil                32            29          81.9
+ 2 Chile                 32            16          90  
+ 3 Japan                 32             6          96.2
+ 4 Mexico                32             6          96.2
+ 5 South Korea           32             5          96.9
+ 6 Italy                 32             4          97.5
+ 7 Germany               32             3          98.1
+ 8 Spain                 32             3          98.1
+ 9 France                32             2          98.8
+10 Sweden                32             1          99.4
+11 Greece                32             0         100  
