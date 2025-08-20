@@ -1,0 +1,23 @@
+Model,Test_Type,Test_Name,Statistic,P_Value,Decision
+d_Pension_GDP,Model Selection,Hausman Test,23.007019038074905,0.0016998169580508585,Fixed Effects
+d_Pension_GDP,Model Selection,F-test (FE vs Pooled),1.1203464857180223,0.3475977112665692,Pooled
+d_Pension_GDP,Heteroskedasticity,Breusch-Pagan Test,39.940748237666774,1.2920886220799585e-6,Heteroskedasticity Present
+d_Pension_GDP,Serial Correlation,Wooldridge Test,0.40994712522819465,0.522614862172508,No Serial Correlation
+d_Pension_GDP,Multicollinearity,Maximum VIF,1.1550182695252742,NA,No Multicollinearity
+d_Pension_GDP,Normality,Shapiro-Wilk Test,0.8643764334874235,4.622422083297603e-14,Non-Normal Residuals
+d_Old_age_dependency,Model Selection,Hausman Test,15.580649255858386,0.02923627271106889,Fixed Effects
+d_Old_age_dependency,Model Selection,F-test (FE vs Pooled),3.116904576521601,0.0010467174205329825,Fixed Effects
+d_Old_age_dependency,Heteroskedasticity,Breusch-Pagan Test,50.487980219772886,1.1584257667550936e-8,Heteroskedasticity Present
+d_Old_age_dependency,Serial Correlation,Wooldridge Test,0.7461293495384506,0.38876029682876756,No Serial Correlation
+d_Old_age_dependency,Multicollinearity,Maximum VIF,1.1697049326778657,NA,No Multicollinearity
+d_Old_age_dependency,Normality,Shapiro-Wilk Test,0.8768238516481471,5.185924765297116e-12,Non-Normal Residuals
+d_Pension_financing_gap,Model Selection,Hausman Test,10.343383096653566,0.1699349134119073,Random Effects
+d_Pension_financing_gap,Model Selection,F-test (FE vs Pooled),1.6005076883861877,0.11638907840378555,Pooled
+d_Pension_financing_gap,Heteroskedasticity,Breusch-Pagan Test,12.487906008262524,0.08561292086033714,No Heteroskedasticity
+d_Pension_financing_gap,Serial Correlation,Wooldridge Test,2.0199989998701393,0.1566361400688467,No Serial Correlation
+d_Pension_financing_gap,Normality,Shapiro-Wilk Test,0.9234377151811423,1.1420880093831478e-9,Non-Normal Residuals
+d_Social_security_GDP,Model Selection,Hausman Test,4.312430468967939,0.7431699853511119,Random Effects
+d_Social_security_GDP,Model Selection,F-test (FE vs Pooled),1.4551538835343396,0.166239875395293,Pooled
+d_Social_security_GDP,Heteroskedasticity,Breusch-Pagan Test,11.733291522892008,0.10967794942669447,No Heteroskedasticity
+d_Social_security_GDP,Serial Correlation,Wooldridge Test,1.0155595483235703e-5,0.9974601671010433,No Serial Correlation
+d_Social_security_GDP,Normality,Shapiro-Wilk Test,0.8963664110556147,1.2075243098337238e-11,Non-Normal Residuals

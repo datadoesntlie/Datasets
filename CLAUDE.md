@@ -89,6 +89,43 @@ This repository contains data and analysis scripts for an econometric study titl
 PensionSustainabilityit = β0 + β1FLFPit + β2CPRit + β3TFRit + β4GDPpcit + β5LifeExpect65it + β6Eduit + β7Urbanit + αi + εit
 ```
 
+### Alternative Model with Lags
+```
+PensionSustainabilityit = β0 + β1FLFPit-2 + β2CPRit-3 + β3TFRit-5 + β4GDPpcit + β5LifeExpect65it + β6Eduit + β7Urbanit + αi + εit
+```
+
+## Estimation Strategy
+
+### Step 1: Model Selection
+- **Hausman test** to choose between Fixed Effects (FE) and Random Effects (RE)
+- **F-test** to determine if country fixed effects are needed
+
+### Step 2: Main Analysis
+Run the main model for each dependent variable:
+- Public pension expenditure (% GDP)
+- Old-age dependency ratio
+- Pension financing gap
+- Social security contributions (% GDP)
+
+### Step 3: Robustness Checks
+- **Lagged variables model** (to account for delayed effects)
+- **Exclude outliers** (test without Japan and Chile)
+- **Sub-sample analysis** (developed vs. developing countries)
+
+## Diagnostic Tests
+
+### Basic Panel Data Tests:
+- **Stationarity**: Panel unit root tests (Im-Pesaran-Shin, Levin-Lin-Chu tests using plm package). If unit root tests indicate non-stationarity:
+  - Apply first differencing to non-stationary variables
+  - Test for cointegration relationships
+  - Consider Vector Error Correction Model (VECM) if cointegration exists
+- **Heteroskedasticity**: Breusch-Pagan test
+- **Serial correlation**: Wooldridge test
+- **Multicollinearity**: Check correlation matrix and VIF scores
+
+### Professor's Technical Note:
+Check for stationarity of variables used in regression since the "time-series" dimension is relevant. Use functions available in plm package (purtest: https://search.r-project.org/CRAN/refmans/plm/html/purtest.html).
+
 ## Data Limitations to Consider
 - Sample: Only 11 countries (limits generalizability)
 - Brazil data starts from 2004 (unbalanced panel)

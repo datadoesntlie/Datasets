@@ -1,0 +1,5 @@
+Model,Preferred_Method,Heteroskedasticity,Serial_Correlation,High_Multicollinearity,Robust_SE_Needed
+d_Pension_GDP,Fixed Effects,Yes,No,No,Yes
+d_Old_age_dependency,Fixed Effects,Yes,No,No,Yes
+d_Pension_financing_gap,Random Effects,No,No,Unknown,No
+d_Social_security_GDP,Random Effects,No,No,Unknown,No

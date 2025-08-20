@@ -1,0 +1,5 @@
+Dependent_Variable,Pesaran_CD_pvalue,Residual_IPS_pvalue,Engle_Granger_pvalue,Cointegration_Evidence
+Pension_GDP,0.05652436898876393,NA,NA,Inconclusive
+Old_age_dependency,0.6286224593585716,NA,NA,Inconclusive
+Pension_financing_gap,0.7589855044319656,NA,NA,Inconclusive
+Social_security_GDP,0.33938678761500296,NA,NA,Inconclusive
