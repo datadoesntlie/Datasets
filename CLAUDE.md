@@ -84,7 +84,7 @@ This repository contains data and analysis scripts for an econometric study titl
 - Use `ggsave()` or `pdf()` for publication-ready outputs
 - Handle missing data with `na.approx()` from zoo package for interpolation
 
-### Econometric Model (for reference)
+### Econometric Main Model
 ```
 PensionSustainabilityit = β0 + β1FLFPit + β2CPRit + β3TFRit + β4GDPpcit + β5LifeExpect65it + β6Eduit + β7Urbanit + αi + εit
 ```
@@ -111,20 +111,6 @@ Run the main model for each dependent variable:
 - **Lagged variables model** (to account for delayed effects)
 - **Exclude outliers** (test without Japan and Chile)
 - **Sub-sample analysis** (developed vs. developing countries)
-
-## Diagnostic Tests
-
-### Basic Panel Data Tests:
-- **Stationarity**: Panel unit root tests (Im-Pesaran-Shin, Levin-Lin-Chu tests using plm package). If unit root tests indicate non-stationarity:
-  - Apply first differencing to non-stationary variables
-  - Test for cointegration relationships
-  - Consider Vector Error Correction Model (VECM) if cointegration exists
-- **Heteroskedasticity**: Breusch-Pagan test
-- **Serial correlation**: Wooldridge test
-- **Multicollinearity**: Check correlation matrix and VIF scores
-
-### Professor's Technical Note:
-Check for stationarity of variables used in regression since the "time-series" dimension is relevant. Use functions available in plm package (purtest: https://search.r-project.org/CRAN/refmans/plm/html/purtest.html).
 
 ## Data Limitations to Consider
 - Sample: Only 11 countries (limits generalizability)

@@ -1,0 +1,5 @@
+Dependent_Variable,Main_Model_R2,Lagged_R2,Outlier_Excl_R2,FLFP_Robust,CPR_Robust,TFR_Robust,Overall_Assessment
+d_Pension_GDP,N/A,0.5565,0.5647,Partial,Partial,Yes,Robust
+d_Old_age_dependency,N/A,0.0376,0.052,Partial,Yes,Partial,Robust
+d_Pension_financing_gap,N/A,0.2238,0.052,Partial,Yes,Partial,Robust
+d_Social_security_GDP,N/A,0.1131,0.052,Partial,Partial,Yes,Robust
