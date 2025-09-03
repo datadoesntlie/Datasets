@@ -125,6 +125,19 @@ for (dep_var in dependent_vars) {
   
   outlier_formula <- as.formula(paste(dep_var, "~ d_FLFP + CPR + TFR + d_GDP_per_capita + d_Life_expectancy_65 + d_Female_tertiary_education + d_Urban_rate"))
   
+  # Initialize variables to avoid scoping issues
+  outlier_fe <- NULL
+  outlier_re <- NULL
+  preferred_outlier <- NULL
+  hausman_outlier <- NULL
+  model_type <- NULL
+  
+  # Clean up any existing objects to prevent contamination
+  if(exists("temp_outlier_fe")) rm(temp_outlier_fe)
+  if(exists("temp_outlier_re")) rm(temp_outlier_re)
+  
+  model_success <- FALSE
+  
   try({
     outlier_fe <- plm(outlier_formula, data = outlier_model_data, model = "within")
     outlier_re <- plm(outlier_formula, data = outlier_model_data, model = "random")
@@ -138,11 +151,13 @@ for (dep_var in dependent_vars) {
       preferred_outlier <- outlier_re
       model_type <- "Random Effects"
     }
+    model_success <- TRUE
   }, silent = FALSE)
   
-  if(!exists("preferred_outlier")) {
+  if(!model_success || is.null(preferred_outlier)) {
     cat("Error in model estimation for", dep_var, "- using Fixed Effects only\n")
-    preferred_outlier <- plm(outlier_formula, data = outlier_model_data, model = "within")
+    outlier_fe <- plm(outlier_formula, data = outlier_model_data, model = "within")
+    preferred_outlier <- outlier_fe
     model_type <- "Fixed Effects"
     hausman_outlier <- NULL
   }
@@ -156,7 +171,7 @@ for (dep_var in dependent_vars) {
   
   print(summary(preferred_outlier))
   
-  if(model_type == "Fixed Effects") {
+  if(model_type == "Fixed Effects" && !is.null(outlier_fe)) {
     robust_se_outlier <- vcovHC(outlier_fe, type = "HC1")
     cat("\nRobust Standard Errors:\n")
     print(coeftest(outlier_fe, vcov = robust_se_outlier))

@@ -1,0 +1,5 @@
+Dependent_Variable,Complete_Cases,Pesaran_CD_Statistic,Pesaran_CD_pvalue,CD_Detected,Pedroni_Tests_Conducted,Pedroni_Statistic,group_rho,Pedroni_Evidence,EG_Tests_Conducted,EG_Statistic,EG_P_Value,EG_Evidence,Overall_Cointegration,Recommendation
+Pension_GDP,274,1.9069707988585431,0.05652436898876393,No,1,NA,0.1516732615723156,None,1,NA,0.15351666139571063,None,No - Insufficient evidence,Use first-difference models
+Old_age_dependency,253,0.4836666582001787,0.6286224593585716,No,1,NA,1.2800080252366193e-7,Weak,1,NA,1.0511173551134085e-27,Weak,Weak evidence,Use first-difference models
+Pension_financing_gap,257,-0.3068132735172939,0.7589855044319656,No,1,NA,0.37935141233925995,None,1,NA,0.36530802719884997,None,No - Insufficient evidence,Use first-difference models
+Social_security_GDP,257,0.9553775801449523,0.33938678761500296,No,1,NA,0.06762409523170691,None,1,NA,0.04373828802735259,Weak,Weak evidence,Use first-difference models

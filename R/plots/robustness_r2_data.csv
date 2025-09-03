@@ -1,0 +1,9 @@
+Model,Dependent_Variable,R_Squared,Model_Type
+Lagged Variables,Pension GDP (%),NA,Fixed Effects
+No Outliers,Pension GDP (%),NA,Random Effects
+Lagged Variables,Old-age Dependency,NA,Fixed Effects
+No Outliers,Old-age Dependency,NA,Random Effects
+Lagged Variables,Pension Financing Gap,NA,Random Effects
+No Outliers,Pension Financing Gap,NA,Fixed Effects
+Lagged Variables,Social Security GDP (%),NA,Random Effects
+No Outliers,Social Security GDP (%),NA,Fixed Effects

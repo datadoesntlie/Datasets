@@ -1,0 +1,13 @@
+Model,Test_Type,Test_Name,Statistic,P_Value,Critical_Value,Decision,Notes
+Pension_GDP,Cross-sectional Dependence,Pesaran CD Test,1.9069707988585431,0.05652436898876393,1.96 (5%),No cross-sectional dependence,Tests for cross-sectional dependence in panel
+Pension_GDP,Pedroni-style Cointegration,Residual-based group_rho,28.76567652295274,0.1516732615723156,0.05 (5%),No cointegration,Panel unit root test on long-run regression residuals
+Pension_GDP,Engle-Granger Cointegration,EG mw.chisq,NA,0.15351666139571063,0.05 (5%),No cointegration,Two-step Engle-Granger cointegration test
+Old_age_dependency,Cross-sectional Dependence,Pesaran CD Test,0.4836666582001787,0.6286224593585716,1.96 (5%),No cross-sectional dependence,Tests for cross-sectional dependence in panel
+Old_age_dependency,Pedroni-style Cointegration,Residual-based group_rho,74.48298686424157,1.2800080252366193e-7,0.05 (5%),Cointegration detected,Panel unit root test on long-run regression residuals
+Old_age_dependency,Engle-Granger Cointegration,EG mw.chisq,NA,1.0511173551134085e-27,0.05 (5%),Cointegration detected,Two-step Engle-Granger cointegration test
+Pension_financing_gap,Cross-sectional Dependence,Pesaran CD Test,-0.3068132735172939,0.7589855044319656,1.96 (5%),No cross-sectional dependence,Tests for cross-sectional dependence in panel
+Pension_financing_gap,Pedroni-style Cointegration,Residual-based group_rho,21.30549778592415,0.37935141233925995,0.05 (5%),No cointegration,Panel unit root test on long-run regression residuals
+Pension_financing_gap,Engle-Granger Cointegration,EG mw.chisq,NA,0.36530802719884997,0.05 (5%),No cointegration,Two-step Engle-Granger cointegration test
+Social_security_GDP,Cross-sectional Dependence,Pesaran CD Test,0.9553775801449523,0.33938678761500296,1.96 (5%),No cross-sectional dependence,Tests for cross-sectional dependence in panel
+Social_security_GDP,Pedroni-style Cointegration,Residual-based group_rho,30.139530371702097,0.06762409523170691,0.05 (5%),No cointegration,Panel unit root test on long-run regression residuals
+Social_security_GDP,Engle-Granger Cointegration,EG mw.chisq,NA,0.04373828802735259,0.05 (5%),Cointegration detected,Two-step Engle-Granger cointegration test
