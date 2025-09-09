@@ -2,7 +2,7 @@ library(plm)
 library(dplyr)
 library(readr)
 
-data <- read_csv("master_dataset.csv")
+data <- read_csv("R/master_dataset.csv")
 
 data_clean <- data %>%
   filter(!is.na(Country) & !is.na(Year)) %>%
@@ -37,21 +37,21 @@ for (var in all_vars) {
     
     try({
       levin_lin <- purtest(var_data[[var]], test = "levinlin", 
-                          exo = "intercept", lags = "AIC", pmax = 4)
+                          exo = "trend", lags = "AIC", pmax = 4)
       test_results$levin_lin <- levin_lin
       cat("Levin-Lin-Chu test p-value:", levin_lin$statistic$p.value, "\n")
     }, silent = TRUE)
     
     try({
       ips <- purtest(var_data[[var]], test = "ips", 
-                    exo = "intercept", lags = "AIC", pmax = 4)
+                    exo = "trend", lags = "AIC", pmax = 4)
       test_results$ips <- ips
       cat("Im-Pesaran-Shin test p-value:", ips$statistic$p.value, "\n")
     }, silent = TRUE)
     
     try({
       madwu <- purtest(var_data[[var]], test = "madwu", 
-                      exo = "intercept", lags = "AIC", pmax = 4)
+                      exo = "trend", lags = "AIC", pmax = 4)
       test_results$madwu <- madwu
       cat("Maddala-Wu test p-value:", madwu$statistic$p.value, "\n")
     }, silent = TRUE)
@@ -95,7 +95,7 @@ for (var in names(stationarity_results)) {
 cat("\n=== STATIONARITY SUMMARY ===\n")
 print(stationarity_summary)
 
-write_csv(stationarity_summary, "stationarity_test_results.csv")
+write_csv(stationarity_summary, "R/stationarity_test_results_trend.csv")
 
 non_stationary <- stationarity_summary$Variable[
   stationarity_summary$Stationary == "Likely Non-Stationary"
@@ -122,7 +122,7 @@ if (length(non_stationary) > 0) {
     
     try({
       levin_lin_diff <- purtest(var_data_diff[[diff_var]], test = "levinlin", 
-                               exo = "intercept", lags = "AIC", pmax = 4)
+                               exo = "trend", lags = "AIC", pmax = 4)
       cat("First difference Levin-Lin-Chu p-value:", 
           levin_lin_diff$statistic$p.value, "\n")
     }, silent = TRUE)
@@ -133,4 +133,4 @@ cat("\n=== PANEL DATA SETUP COMPLETE ===\n")
 cat("Data dimensions:", nrow(pdata), "observations,", ncol(pdata), "variables\n")
 cat("Countries:", length(unique(pdata$Country)), "\n")
 cat("Years:", min(pdata$Year, na.rm = TRUE), "to", max(pdata$Year, na.rm = TRUE), "\n")
-cat("Results saved to: stationarity_test_results.csv\n")
+cat("Results saved to: R/stationarity_test_results_trend.csv\n")
