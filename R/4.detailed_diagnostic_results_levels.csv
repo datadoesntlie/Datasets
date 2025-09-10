@@ -1,0 +1,23 @@
+Model,Test_Type,Test_Name,Statistic,P_Value,Decision
+Pension_GDP,Model Selection,Hausman Test,111.28949007851342,8.031765621693724e-20,Fixed Effects
+Pension_GDP,Model Selection,F-test (Pooled vs FE),369.0552957312652,4.745421497051316e-145,Country Effects Needed
+Pension_GDP,Heteroskedasticity,Breusch-Pagan Test,99.3522977420681,2.1273796329359107e-17,Heteroskedasticity Present
+Pension_GDP,Serial Correlation,Wooldridge Test,991.8325523987511,6.919004099333891e-91,Serial Correlation Present
+Pension_GDP,Multicollinearity,Maximum VIF,5.710795375344177,NA,Multicollinearity Concern
+Pension_GDP,Normality,Shapiro-Wilk Test,0.9842889311659924,0.004194276365171406,Non-Normal Residuals
+Old_age_dependency,Model Selection,Hausman Test,2827.8232648686303,0,Fixed Effects
+Old_age_dependency,Model Selection,F-test (Pooled vs FE),57.66577738994552,2.0806616202232046e-57,Country Effects Needed
+Old_age_dependency,Heteroskedasticity,Breusch-Pagan Test,158.31056546573188,1.666153895876809e-29,Heteroskedasticity Present
+Old_age_dependency,Serial Correlation,Wooldridge Test,2046.6793903622042,1.8028736683212136e-119,Serial Correlation Present
+Old_age_dependency,Multicollinearity,Maximum VIF,5.787142978749718,NA,Multicollinearity Concern
+Old_age_dependency,Normality,Shapiro-Wilk Test,0.9657302495897101,9.443118477268485e-6,Non-Normal Residuals
+Pension_financing_gap,Model Selection,F-test (Pooled vs FE),60.72237068365082,1.094522761711725e-56,Country Effects Needed
+Pension_financing_gap,Heteroskedasticity,Breusch-Pagan Test,43.91024219085499,1.4662120689241222e-6,Heteroskedasticity Present
+Pension_financing_gap,Serial Correlation,Wooldridge Test,1494.4005083619966,2.9072849475417303e-106,Serial Correlation Present
+Pension_financing_gap,Multicollinearity,Maximum VIF,6.348527711879523,NA,Multicollinearity Concern
+Pension_financing_gap,Normality,Shapiro-Wilk Test,0.9954023680803117,0.6430837367269117,Normal Residuals
+Social_security_GDP,Model Selection,F-test (Pooled vs FE),163.81548621195407,1.0404791358332512e-96,Country Effects Needed
+Social_security_GDP,Heteroskedasticity,Breusch-Pagan Test,70.8343007792605,1.0445368374105547e-11,Heteroskedasticity Present
+Social_security_GDP,Serial Correlation,Wooldridge Test,5724.329787068238,6.884965186549272e-172,Serial Correlation Present
+Social_security_GDP,Multicollinearity,Maximum VIF,6.348527711879525,NA,Multicollinearity Concern
+Social_security_GDP,Normality,Shapiro-Wilk Test,0.9851823155359324,0.009143201705429012,Non-Normal Residuals
